@@ -1,0 +1,17 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: nodeex-db
+    restart: always
+    env_file: .env
+    # environment:
+    #   MYSQL_ROOT_PASSWORD: rootpass
+    #   MYSQL_DATABASE: nodeex_db
+    #   MYSQL_USER: nodeex_user
+    #   MYSQL_PASSWORD: nodeexpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+volumes:
+  db_data:
